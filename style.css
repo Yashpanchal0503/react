@@ -27,12 +27,13 @@
 .nav-bar ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 15px;
 }
 
 .nav-bar li {
     font-size: 18px;
     font-weight: 500;
+    padding: 10px;
     cursor: pointer;
     transition: color 0.2s ease;
 }
@@ -45,38 +46,44 @@
     margin: 0;
     padding: 0;
 }
+.btn {
+    padding: 10px;
 
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #ff6b00;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
 body {
     font-family: Arial, sans-serif;
     color: #1f1f1f;
     background-color: white;
 }
-
-/* Search / filter area */
-.search {
-    width: 90%;
-    height: 45px;
-    margin: 20px auto;
-    padding: 0px 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    color: #555;
-}
-
 /* Restaurant grid */
 .restaurent-card {
     width: 90%;
     max-width: 1400px;
     margin: 30px auto;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    
     gap: 32px 36px;
 }
 
 /* Individual card */
 .card {
-    width: 100%;
+    width: 31%;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -91,7 +98,6 @@ body {
     height: 220px;
     object-fit: cover;
     display: block;
-
     border-radius: 18px;
 }
 
@@ -99,40 +105,54 @@ body {
 .name {
     font-size: 20px;
     font-weight: 700;
-    margin: 14px 4px 4px;
+    margin: 12px 4px 5px;
     color: #171717;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Rating + time */
+.rating {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 4px;
+    color: #222;
+}
+
+.time {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
 }
 
 /* Cuisine */
 .cusine {
-    font-size: 16px;
-    font-weight: 400;
-    color: #686868;
-    margin: 8px 4px 4px;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.place {
-    font-size: 16px;
-    font-weight: 400;
-    color: #686868;
-    margin: 8px 4px 4px;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Rating */
-.rating {
-    display: inline-block;
     font-size: 15px;
-    font-weight: 600;
-    margin: 0 4px;
-    color: #222;
+    font-weight: 400;
+    color: #686868;
+    margin: 7px 4px 3px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+/* Location */
+.place {
+    font-size: 15px;
+    font-weight: 400;
+    color: #686868;
+    margin: 3px 4px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
 
 /* Time */
 .time {
@@ -143,10 +163,81 @@ body {
     color: #222;
 }
 
-.res-search{
-    width: 100%;
+
+.search {
+    width: 90%;
+    max-width: 900px;
+    height: 45px;
+    margin: 20px auto;
+    padding: 0 10px 0 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.res-search {
+    flex: 1;
     height: 100%;
+
     border: none;
     outline: none;
+
     font-size: 18px;
+    color: #555;
+}
+
+.top-btn {
+    height: 35px;
+    padding: 0 15px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #ff6b00;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.top-btn:hover {
+    background-color: #e85f00;
+}
+
+.top-btn:active {
+    transform: scale(0.97);
+}
+
+
+.shimmer-container{
+
+    margin-left: 40px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 32px;
+}
+.shimmer-search{
+    margin-top: 20px; 
+    margin-left :150px;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 40px;
+    background-color: #cecece;
+}
+.shimmer-card{
+    width: 30%;
+    height: 250px;
+    background-color: #ececec;
+    
 }
