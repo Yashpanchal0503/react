@@ -2,7 +2,7 @@ const RestaurantCard = ({ resdata }) => {
     const { info } = resdata;
 
     return (
-        <div className="card">
+        <>
             <img
                 className="picture"
                 src={
@@ -27,7 +27,7 @@ const RestaurantCard = ({ resdata }) => {
             <h4 className="place">
                 {info.areaName}
             </h4>
-        </div>
+        </>
     );
 };
 

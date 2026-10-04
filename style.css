@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .container {
@@ -30,7 +31,9 @@
     gap: 15px;
 }
 
-.nav-bar li {
+.nav-bar .li {
+    color: #171717;
+    text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     padding: 10px;
@@ -38,7 +41,7 @@
     transition: color 0.2s ease;
 }
 
-.nav-bar li:hover {
+.nav-bar .li:hover {
     color: #ff6b00;
 }
 * {
@@ -240,4 +243,202 @@ body {
     height: 250px;
     background-color: #ececec;
     
+}
+
+
+
+.menu-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    font-family: Arial, sans-serif;
+}
+
+/* Restaurant Name */
+.menu-name {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Restaurant Image */
+.menu-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* Restaurant Price */
+.menu-price {
+    font-size: 20px;
+    color: #444;
+    margin: 10px 0;
+}
+
+/* Cuisines */
+.menu-cuisines {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Food List */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Food Item */
+.menu-item {
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    background-color: #fafafa;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.menu-item:hover {
+    background-color: #fff4ed;
+    border-color: #fc8019;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .menu-container {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .menu-name {
+        font-size: 25px;
+    }
+
+    .menu-image {
+        max-height: 220px;
+    }
+
+    .menu-item {
+        padding: 14px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* Main Container */
+.shimmer-menu-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -800px 0;
+    }
+    100% {
+        background-position: 800px 0;
+    }
+}
+
+/* Common Shimmer Effect */
+.shimmer-menu-name,
+.shimmer-menu-image,
+.shimmer-menu-price,
+.shimmer-menu-cuisines,
+.shimmer-menu-item {
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 50%,
+        #eeeeee 75%
+    );
+    background-size: 800px 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 8px;
+}
+
+/* Restaurant Name */
+.shimmer-menu-name {
+    width: 60%;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+/* Restaurant Image */
+.shimmer-menu-image {
+    display: block;
+    width: 100%;
+    height: 280px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+/* Restaurant Price */
+.shimmer-menu-price {
+    width: 35%;
+    height: 24px;
+    margin: 15px 0;
+}
+
+/* Cuisines */
+.shimmer-menu-cuisines {
+    width: 75%;
+    height: 18px;
+    margin-bottom: 30px;
+}
+
+/* Food List */
+.shimmer-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual Food Item */
+.shimmer-menu-item {
+    width: 100%;
+    height: 65px;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .shimmer-menu-container {
+        margin: 20px 12px;
+        padding: 18px;
+    }
+
+    .shimmer-menu-image {
+        height: 200px;
+    }
+
+    .shimmer-menu-name {
+        height: 28px;
+    }
+
+    .shimmer-menu-item {
+        height: 55px;
+    }
 }
