@@ -12,12 +12,12 @@ class UserClass extends React.Component {
     try {
       const data = await fetch("https://api.github.com/users/yashpanchal0503");
       const json = await data.json();
-      console.log(json);
+      // console.log(json); 
       this.setState({
         userInfo: json,
       });
     } catch (error) {
-      console.error("Failed to fetch user data:", error);
+      // console.error("Failed to fetch user data:", error);
     }
   }
 

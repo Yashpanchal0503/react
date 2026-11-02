@@ -1,8 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { BODY_API, BODY_API2 } from "../utils/constants";
+import UserContext from "../utils/userContext";
 
 const Body = () => {
   const [reslist, setreslist] = useState([]);
@@ -15,13 +17,15 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6130146&lng=77.03495029999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      BODY_API2
     );
 
     const json = await data.json();
     // optional chaining
     const datarestaurants =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    console.log(datarestaurants);
+    console.log(json);
 
     setrestaurants(datarestaurants || []);
     setreslist(datarestaurants || []);
@@ -41,6 +45,8 @@ const Body = () => {
       </div>
     );
   }
+
+  const {loggedInUser,setUserName}=useContext(UserContext);
 
   // conditional rendering
   return reslist.length === 0 ? (
@@ -83,6 +89,15 @@ const Body = () => {
         >
           Top Rated Restaurants (4.2★+)
         </button>
+        <input
+            type="text"
+            className="w-full sm:w-80 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all placeholder:text-gray-400"
+            placeholder="UserName"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
       </div>
 
       {/* Restaurant Cards Grid */}

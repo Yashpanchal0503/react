@@ -1,4 +1,4 @@
-import React, { lazy ,Suspense} from "react";
+import React, { lazy ,Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 
 import Header from "./components/Header";
@@ -8,6 +8,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./utils/userContext";
+
 
 
 const Grocery = lazy(()=>import("./components/Grocery"))
@@ -18,12 +20,21 @@ const Grocery = lazy(()=>import("./components/Grocery"))
 // config driven ui
 // key - index as a key 
 // props is just a js object 
+
+
 const App = ()=>{
+    const [userName,setUserName]=useState("");
+    
+    useEffect(()=>{
+        setUserName("Yash Panchal");
+    },[])
     return (
-        <div>
-            <Header/>
-            <Outlet/>
-        </div>
+        <UserContext.Provider value={{loggedInUser : userName,setUserName}}>
+            <div>
+                <Header/>
+                <Outlet/>
+            </div>
+        </UserContext.Provider>
     );
 };
 

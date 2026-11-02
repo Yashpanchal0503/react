@@ -1,2 +1,4 @@
 export const LOGO_URL= "https://th.bing.com/th/id/OIP.UdUO9FVwvlkAStde0ZLYcQHaHa?w=172&h=180&c=7&r=0&o=7&dpr=1.8&pid=1.7&rm=3";
 export const MENU_API="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.9479687&lng=88.4542295&restaurantId=";
+export const BODY_API="https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.969263&lng=76.8176147&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+export const BODY_API2="https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6130146&lng=77.03495029999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";

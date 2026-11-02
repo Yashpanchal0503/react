@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import UserContext from "../utils/userContext";
+
 const RestaurantCard = ({ resdata }) => {
   const { info } = resdata;
+  const {loggedInUser}= useContext(UserContext);
 
   return (
     <div className="flex flex-col h-full bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 p-3">
@@ -16,7 +20,7 @@ const RestaurantCard = ({ resdata }) => {
       </div>
 
       {/* Details Container */}
-      <div className="flex flex-col flex-grow justify-between">
+      <div className="flex flex-col grow justify-between">
         <div>
           {/* Restaurant Name */}
           <h3 className="font-bold text-gray-800 text-lg truncate mb-1" title={info.name}>
@@ -42,7 +46,7 @@ const RestaurantCard = ({ resdata }) => {
 
         {/* Location */}
         <p className="text-gray-400 text-xs font-medium truncate mt-2 pt-2 border-t border-gray-100">
-          {info.areaName}
+          {info.areaName} - {loggedInUser}
         </p>
       </div>
     </div>
